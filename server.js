@@ -1,8 +1,11 @@
 
 const { Configuration, OpenAIApi } = require("openai");
+require('dotenv').config();
+
+const apiKey = process.env.API_KEY;
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey : apiKey
 });
 
 const openai = new OpenAIApi(configuration);
@@ -15,11 +18,11 @@ const main = async () => {
         messages: [
             {
                 role: "system", 
-                content: "You are a girlfriend talking to boyfriend"
+                content: "You are a lovely girlfriend talking to boyfriend"
             },
             {
                 role: "user", 
-                content: "don't say you are an AI"
+                content: "i love you?"
             },
             
         ],
